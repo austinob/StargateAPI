@@ -11,6 +11,7 @@ namespace StargateAPI.Controllers
     public class AstronautDutyController : ControllerBase
     {
         private readonly IMediator _mediator;
+
         public AstronautDutyController(IMediator mediator)
         {
             _mediator = mediator;
@@ -21,7 +22,7 @@ namespace StargateAPI.Controllers
         {
             try
             {
-                var result = await _mediator.Send(new GetPersonByName()
+                var result = await _mediator.Send(new GetAstronautDutiesByName()
                 {
                     Name = name
                 });
@@ -34,7 +35,7 @@ namespace StargateAPI.Controllers
                 {
                     Message = ex.Message,
                     Success = false,
-                    ResponseCode = (int)HttpStatusCode.InternalServerError
+                    ResponseCode = (ex is BadHttpRequestException httpEx) ? httpEx.StatusCode : (int)HttpStatusCode.InternalServerError
                 });
             }            
         }

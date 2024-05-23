@@ -21,13 +21,17 @@ namespace StargateAPI.Business.Queries
 
         public async Task<GetPersonByNameResult> Handle(GetPersonByName request, CancellationToken cancellationToken)
         {
-            var result = new GetPersonByNameResult();
+            var param = new { request.Name };
+            var query = "SELECT a.Id as PersonId, a.Name, b.CurrentRank, b.CurrentDutyTitle, b.CareerStartDate, b.CareerEndDate FROM [Person] a LEFT JOIN [AstronautDetail] b on b.PersonId = a.Id WHERE @Name = a.Name";
 
-            var query = $"SELECT a.Id as PersonId, a.Name, b.CurrentRank, b.CurrentDutyTitle, b.CareerStartDate, b.CareerEndDate FROM [Person] a LEFT JOIN [AstronautDetail] b on b.PersonId = a.Id WHERE '{request.Name}' = a.Name";
+            var person = await _context.Connection.QueryFirstOrDefaultAsync<PersonAstronaut>(query, param);
+            
+            if (person is null) throw new BadHttpRequestException("Person does not exist");
 
-            var person = await _context.Connection.QueryAsync<PersonAstronaut>(query);
-
-            result.Person = person.FirstOrDefault();
+            var result = new GetPersonByNameResult()
+            {
+                Person = person
+            };
 
             return result;
         }
