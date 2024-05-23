@@ -3,6 +3,7 @@ using MediatR;
 using StargateAPI.Business.Data;
 using StargateAPI.Business.Dtos;
 using StargateAPI.Controllers;
+using System.Net;
 
 namespace StargateAPI.Business.Queries
 {
@@ -26,7 +27,7 @@ namespace StargateAPI.Business.Queries
 
             var person = await _context.Connection.QueryFirstOrDefaultAsync<PersonAstronaut>(query, param);
             
-            if (person is null) throw new BadHttpRequestException("Person does not exist");
+            if (person is null) throw new BadHttpRequestException("Person does not exist", (int)HttpStatusCode.NotFound);
 
             var result = new GetPersonByNameResult()
             {

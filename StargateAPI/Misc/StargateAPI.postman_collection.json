@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "369886bb-9c0d-424e-b8f1-6d1a3b12c464",
+		"name": "StargateAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35128816"
+	},
+	"item": [
+		{
+			"name": "Valid",
+			"item": [
+				{
+					"name": "[1] Create Neil",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"Neil Armstrong\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Person",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[2] Create Neil Duty 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Neil Armstrong\",\r\n  \"rank\": \"1LT\",\r\n  \"dutyTitle\": \"Pilot\",\r\n  \"dutyStartDate\": \"1962-05-23T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/AstronautDuty",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"AstronautDuty"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[3] Create Neil Duty 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Neil Armstrong\",\r\n  \"rank\": \"2LT\",\r\n  \"dutyTitle\": \"Commander\",\r\n  \"dutyStartDate\": \"1966-05-23T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/AstronautDuty",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"AstronautDuty"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[4] Create Neil Duty 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Neil Armstrong\",\r\n  \"rank\": \"\",\r\n  \"dutyTitle\": \"RETIRED\",\r\n  \"dutyStartDate\": \"1972-05-23T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/AstronautDuty",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"AstronautDuty"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[5] Get Neil's Duties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/AstronautDuty/Neil%20Armstrong",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"AstronautDuty",
+								"Neil%20Armstrong"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[6] Get Neil's Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Person/Neil%20Armstrong",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Person",
+								"Neil%20Armstrong"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[7] Create John",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"John Doe\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Person",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[8] Create John Duty",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"rank\": \"1LT\",\r\n  \"dutyTitle\": \"Commander\",\r\n  \"dutyStartDate\": \"2024-05-22T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/AstronautDuty",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"AstronautDuty"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[9] Create Jane",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"Jane Doe\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Person",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[10] Get People",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Person",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[11] Rename John",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"John X Doe\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Person/John%20Doe",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Person",
+								"John%20Doe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[12] Get John's Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Person/John%20X%20Doe",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Person",
+								"John%20X%20Doe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invalid",
+			"item": [
+				{
+					"name": "[1] Get bad user details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Person/JohnDoe",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Person",
+								"JohnDoe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[2] Create John Duty Again",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"rank\": \"1LT\",\r\n  \"dutyTitle\": \"Commander\",\r\n  \"dutyStartDate\": \"2024-05-22T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/AstronautDuty",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"AstronautDuty"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[3] Create Jane Retirement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Jane Doe\",\r\n  \"rank\": \"\",\r\n  \"dutyTitle\": \"RETIRED\",\r\n  \"dutyStartDate\": \"2024-05-23T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/AstronautDuty",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"AstronautDuty"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

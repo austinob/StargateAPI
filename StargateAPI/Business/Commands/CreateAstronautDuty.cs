@@ -38,7 +38,7 @@ namespace StargateAPI.Business.Commands
         {
             var person = _context.People.AsNoTracking().FirstOrDefault(z => z.Name == request.Name);
 
-            if (person is null) throw new BadHttpRequestException("Bad Request");
+            if (person is null) throw new BadHttpRequestException("Person does not exist", (int)HttpStatusCode.NotFound);
 
             // TODO: review semantics here...
 

@@ -3,6 +3,7 @@ using MediatR.Pipeline;
 using Microsoft.EntityFrameworkCore;
 using StargateAPI.Business.Data;
 using StargateAPI.Controllers;
+using System.Net;
 
 namespace StargateAPI.Business.Commands
 {
@@ -25,7 +26,7 @@ namespace StargateAPI.Business.Commands
         {
             var person = _context.People.AsNoTracking().SingleOrDefault(z => z.Name == request.OldName);
 
-            if (person is null) throw new BadHttpRequestException("Person does not exist");
+            if (person is null) throw new BadHttpRequestException("Person does not exist", (int)HttpStatusCode.NotFound);
 
             return Task.CompletedTask;
         }
